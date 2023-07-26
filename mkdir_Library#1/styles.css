@@ -1,9 +1,10 @@
-.body{
+body{
     width: 1440px;
+    margin: 0;
 }
 
 .header {
-    width: 1440px;
+    width: 100%;
     height: 90px;
     flex-shrink: 0;
     background: #0C0C0E;
@@ -65,45 +66,44 @@ h1{
 }
 
 .image_container {
-    width: 1438px;
-    height: 598px;
-    flex-shrink: 0;
-    border: 1px solid #000;
-    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
-    overflow: hidden;
-    position: relative;
-
-
+    width: 100%;
+    height: 100%;
 }
 
 .image_container img {
+  
+    border: 1px solid #000; /*вылезает за границы*/
+ 
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    width: 1438px;
-    height: 598px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-
+    /**/
 }
 
-.gradient_text {
+.welcome_container {
+    width: 100%;
+    height: 600px;
+    position: relative;
+    background-size: cover;
+    /**/
+ 
+}
+
+.gradient {
     background-size: cover;
     border: 1px solid #000;
-    background-image: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.10) 100%);
+    background-image: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.10) 100%), url(Assets/img/Welcome.jpg);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
-    
+ 
 }
 
 .welcome_text {
-    position: absolute;
-    width: 520px;
-    height: 150px;
     flex-shrink: 0;
-    top: 255px;
-    left: 40px;
- 
     color: #fff;
     text-align: center;
     font-family: Forum;
@@ -116,17 +116,86 @@ h1{
 
 }
 
+.welcome_bg {
+    position: absolute;
+    top: 220px;
+    display: flex;
+    width: 520px;
+    height: 150px;
+    padding: 35px 40px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    background: #0C0C0E;
+}
+
+
 h2{
     text-align: center;
 }
 
-.line{
+hr{
+    width: 50px;
+    height: 1px;  
+    background: #0C0C0E; 
+}
+
+.ab-text {
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 200% */
+}
+
+.images-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 20px;
     
 }
 
+.ab-image {
+    width: 450px;
+    height: 560px;
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.carousel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 68px;
+    
+}
+
+.carousel-button {
+    width: 16px;
+    height: 16px;
+
+    padding: 0;
+    border-radius: 50%;
+}
+
+.carousel-button.active {
+    background: #BB945F;
+}
+
+.carousel-button.inactive {
+    background: #0C0C0E;
+}
 
 .coffeShop-text{
-    width: 1400px;
+    width: 100%;
     height: 120px;
     color: #000;
     text-align: center;
