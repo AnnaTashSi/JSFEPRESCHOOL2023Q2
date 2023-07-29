@@ -34,8 +34,10 @@
     <main>
         <section>
             <div class="welcome_container">
-                <div class="image_container gradient">
+                <div class="image_container">
                     <img class="image_welcome" src="Assets/img/Welcome.jpg" alt="welcome to the brooklyn library">
+                </div>
+                <div class="gradient">
                 </div>
                 <div class="welcome_bg">
                     <p class="welcome_text">Welcome <br> to the Brooklyn <br> Library</p> 
@@ -43,9 +45,12 @@
             </div>
         </section>
 
-        <section id="about">
-            <h2>About</h2>
-            <hr>
+        <section id="about" class="main-content">
+            <div class="section-header">
+                <h2>About</h2>
+                <hr>
+            </div>
+            
             <p class="ab-text">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside</p>
             <div class="images-items">
                 <img class="ab-image" src="Assets/img/image 1.png" alt="image_1">
@@ -63,41 +68,109 @@
             </div>
         </section>
 
-        <section id="favorites">
-            <h2>Favorites</h2>
-            <img src="Assets/img/line.png" alt="line" class="line">
-            <p>Pick favorites of season</p>
-            <form>
-                <label>
-                    <input type="radio" name="seasons" value="winter" >
-                    Winter
-                </label>
-                <label>
-                    <input type="radio" name="seasons" value="spring" >
-                    Spring
-                </label>
-                <label>
-                    <input type="radio" name="seasons" value="summer" >
-                    Summer
-                </label>
-                <label>
-                    <input type="radio" name="seasons" value="autumn" >
-                    Autumn
-                </label>
-            </form>
+        <section id="favorites" class="main-content">
+            <div class="section-favorites">
+                <h2>Favorites</h2>
+                <hr>
+            </div>
+            <div class="pick">
+                <p>Pick favorites of season</p>
+            </div>
+            <div class="radio-button">
+                <form>
+                    <label>
+                        <input type="radio" name="seasons" value="winter" >
+                        Winter
+                    </label>
+                    <label>
+                        <input type="radio" name="seasons" value="spring" >
+                        Spring
+                    </label>
+                    <label>
+                        <input type="radio" name="seasons" value="summer" >
+                        Summer
+                    </label>
+                    <label>
+                        <input type="radio" name="seasons" value="autumn" >
+                        Autumn
+                    </label>
+                </form>
+            </div>
+            <div class="favorites-items">
+                
+                <div class="books-block">
+
+
+                     
+                        <div class="about-book">
+
+                            <div class="staff-picks">Staff Picks</div>
+                            <hr>
+                            <div class="book-title">The Book Eaters</div>
+                            <div class="book-author">By Sunyi Dean</div>
+                            <p class="book-discription">An unusual sci-fi story about a book eater woman who tries desperately to save her dangerous mind-eater son from tradition and certain death. Complete with dysfunctional family values, light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.</p>
+                            <button class="book-buy">Buy</button>
+                            <img class="book-pic"   src="Assets/img/pic-SunyiDean.jpg" alt="The Book Eaters By Sunyi Dean">
+                        </div>
+                        <div class="about-book">
+
+                            <div class="staff-picks">Staff Picks</div>
+                            <hr>
+                            <div class="book-title">Cackle</div>
+                            <div class="book-author">By Rachel Harrison</div>
+                            <p class="book-discription">Are your Halloween movies of choice The Witches of Eastwick and Practical Magic? Look no further than here - where a woman recovering from a breakup moves to a quaint town in upstate New York and befriends a beautiful witch.</p>
+                            <button class="book-buy">Buy</button>
+                            <img class="book-pic"  src="Assets/img/pic-RachelHarrison.jpg" alt="Cackle By Rachel Harrison">
+                        </div>
+
+                        <div class="about-book">
+
+                            <div class="staff-picks">Staff Picks</div>
+                            <hr>
+                            <div class="book-title">Dante: Poet of the Secular World</div>
+                            <div class="book-author">By Erich Auerbach</div>
+                            <p class="book-discription">Auerbach's engaging book places the 'Comedy' within the tradition of epic, tragedy, and philosophy in general, arguing for Dante's uniqueness as one who raised the individual and his drama of soul into something of divine significance—an inspired introduction to Dante's main themes.</p>
+                            <button class="book-buy">Buy</button>
+                            <img class="book-pic"  src="Assets/img/pic-ErichAuerbach.jpg" alt="Dante: Poet of the Secular World By Erich Auerbach">
+                        </div>
+
+                        <div class="about-book">
+
+                            <div class="staff-picks">Staff Picks</div>
+                            <hr>
+                            <div class="book-title">The Last Queen</div>
+                            <div class="book-author">By Clive Irving</div>
+                            <p class="book-discription">A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.</p>
+                            <button class="book-buy">Buy</button>
+                            <img class="book-pic"  src="Assets/img/pic-CliveIrving.jpg" alt="The Last Queen By Clive Irving">
+                        </div>
+                            
+               
+
+
+                </div>
+            </div>
+            
         </section>
         
-        <section id="coffee_shop">
-            <h2>Coffee shop</h2> 
-            <img src="Assets/img/line.png" alt="line" class="line">
+        <section id="coffee_shop" class="main-content">
+            <div class="section-coffeShop"> 
+                <h2>Coffee shop</h2> 
+                <hr>
+            </div>
+            
             <p class="coffeShop-text">In our library, we have of cozy coffee shop, welcoming in customers with frothy cappuccinos and friendly conversation. 
                 you can get a favorite book and read in coffee shop. Our barista to cook you best coffee, and also you can try desserts from bakery.</p>
                 
             </section>
 
-        <section id="contacts">
-            <h2>Our contacts</h2>
-            <img src="Assets/img/line.png" alt="line" class="line">
+        <section id="contacts" class="main-content">
+            <div class="section-contacts">
+                <h2>Our contacts</h2>
+                <hr>
+            </div>
+            
+            
             <table>
                 <tbody>
                     <tr>
@@ -123,9 +196,13 @@
             </table>
         </section>
 
-        <section id="library_card">
-            <h2>Digital Library Cards</h2> 
-            <img src="Assets/img/line.png" alt="line" class="line">
+        <section id="library_card" class="main-content">
+            <div class="section-libraryCard">
+                <h2>Digital Library Cards</h2> 
+                <hr>
+            </div>
+            
+    
         </section>
 
     </main>

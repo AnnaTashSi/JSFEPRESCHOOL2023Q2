@@ -130,9 +130,35 @@ h1{
 }
 
 
+.main-content {
+    padding: 0 20px;
+}
+
+
 h2{
     text-align: center;
 }
+
+.section-header {
+    margin-bottom: 40px;
+}
+
+.section-favorites {
+    margin-bottom: 40px;
+}
+
+.section-coffeShop {
+    margin-bottom: 40px;
+}
+
+.section-contacts {
+    margin-bottom: 40px;
+}
+
+.section-libraryCard {
+    margin-bottom: 40px;
+}
+
 
 hr{
     width: 50px;
@@ -153,9 +179,7 @@ hr{
 .images-items {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding: 0 20px;
-    
+    justify-content: space-between;   
 }
 
 .ab-image {
@@ -192,6 +216,116 @@ hr{
 
 .carousel-button.inactive {
     background: #0C0C0E;
+}
+
+.pick {
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.radio-button {
+    margin-top: 40px;
+
+}
+
+/*books*/
+
+.staff-picks {
+    color: #000;
+    font-family: Forum;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 200% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.book-title {
+    color: #000;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px; /* 266.667% */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.book-author {
+    color: #000;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.book-discription {
+    width: 355px;
+    color: #000;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 266.667% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.books-block {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 100%;
+    background-color: pink; /*DELETE*/
+    padding-top: 40px;
+
+}
+
+.about-book {
+    position: relative;
+    width: 550px;
+    height: 555px;
+    border: 1px solid #000;
+    background: #FFF;
+    padding-left: 20px;
+    margin-bottom: 40px;
+}
+
+.book-buy {
+    position: absolute;
+    width: 75px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 2px;
+    border: 1px solid #0C0C0E;
+    color: #0C0C0E;
+    text-align: center;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    background: none;
+    bottom: 15px;
+}
+
+
+.book-pic {
+    position: absolute;
+    left: 390px;
+    top: 255px;
+    width: 200px;
+    height: 300px;
 }
 
 .coffeShop-text{
