@@ -1,6 +1,6 @@
 body{
     width: 1440px;
-    margin: 0;
+    /* margin: 0; */
 }
 
 .header {
@@ -46,7 +46,7 @@ h1{
 .nav-link:hover {
     color: #BB945F;
     font-style:unset;
-}
+}  
 
 .nav-list{
     display: inline-flex;
@@ -65,6 +65,7 @@ h1{
     margin-bottom: 31px;
 }
 
+/* 
 .image_container {
     width: 100%;
     height: 100%;
@@ -72,7 +73,7 @@ h1{
 
 .image_container img {
   
-    border: 1px solid #000; /*вылезает за границы*/
+    border: 1px solid #000; 
  
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     position: relative;
@@ -82,25 +83,21 @@ h1{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /**/
+  
 }
+*/
+
 
 .welcome_container {
-    width: 100%;
-    height: 600px;
+    /* width: 100%; */
+    height: 598px;
     position: relative;
     background-size: cover;
-    /**/
- 
+    border: 1px solid #000;
+    background: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.10) 50%), center / cover no-repeat url(Assets/img/Welcome.jpg);
 }
 
-.gradient {
-    background-size: cover;
-    border: 1px solid #000;
-    background-image: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.10) 100%), url(Assets/img/Welcome.jpg);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
- 
-}
+
 
 .welcome_text {
     flex-shrink: 0;
@@ -137,9 +134,21 @@ h1{
 
 h2{
     text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #0C0C0E;
+    font-family: Forum;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 100% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    padding-top: 0.05px;
+    position: relative;
 }
 
-.section-header {
+/* .section-header {
     margin-bottom: 40px;
 }
 
@@ -157,13 +166,15 @@ h2{
 
 .section-libraryCard {
     margin-bottom: 40px;
-}
+} */
 
 
 hr{
     width: 50px;
     height: 1px;  
     background: #0C0C0E; 
+    margin-bottom: 40px;
+    margin-top: 0;
 }
 
 .ab-text {
@@ -179,7 +190,7 @@ hr{
 .images-items {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;   
+    justify-content: space-between; 
 }
 
 .ab-image {
@@ -191,28 +202,34 @@ hr{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 40px 0;
+    margin-top: 40px;
+    margin-bottom: 60px;
 }
 
 .carousel {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 68px;
-    
+    width: 78px;
+    padding: 5px;
 }
 
 .carousel-button {
     width: 16px;
     height: 16px;
-
     padding: 0;
     border-radius: 50%;
+}
+
+.carousel-button.active:hover {
+    background: #BB945F;
+    cursor:pointer;
 }
 
 .carousel-button.active {
     background: #BB945F;
 }
+
 
 .carousel-button.inactive {
     background: #0C0C0E;
@@ -285,7 +302,7 @@ hr{
     flex-wrap: wrap;
     justify-content: space-between;
     height: 100%;
-    background-color: pink; /*DELETE*/
+  
     padding-top: 40px;
 
 }
