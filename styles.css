@@ -245,11 +245,37 @@ hr{
 }
 
 .radio-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 90px;
     margin-top: 40px;
+    width: 700px;
+    height: 24px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.favorites-radio-button {
+    margin: 5px;
 
 }
 
+.favorites-label:hover {
+    font-weight: bold;
+
+}
+
+
 /*books*/
+
+
 
 .staff-picks {
     color: #000;
@@ -260,8 +286,15 @@ hr{
     line-height: 40px; /* 200% */
     letter-spacing: 2px;
     text-transform: capitalize;
+    margin-top: 15px;
 }
 
+.favorites-hr {
+    margin-left:0;
+    background: none;
+    margin-bottom: 20px;
+
+}
 .book-title {
     color: #000;
     font-family: Inter;
@@ -294,19 +327,56 @@ hr{
     line-height: 40px; /* 266.667% */
     letter-spacing: 2px;
     text-transform: capitalize;
+    margin-block-start: 20px;
 }
 
-.books-block {
+.winter {
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
     justify-content: space-between;
     height: 100%;
-  
     padding-top: 40px;
-
 }
 
+.summer {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 100%;
+    padding-top: 40px;
+}
+
+.autumn {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 100%;
+    padding-top: 40px;
+}
+
+.spring {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 100%;
+    padding-top: 40px;
+}
+
+.summer {
+    display: none;
+}
+
+.autumn {
+    display: none;
+}
+
+.spring {
+    display: none;
+}
 .about-book {
     position: relative;
     width: 550px;
@@ -336,6 +406,32 @@ hr{
     bottom: 15px;
 }
 
+.book-buy:hover {
+    border: 1px solid #BB945F;
+    background: #BB945F;
+    cursor: pointer;
+}
+
+.book-own:disabled {
+}
+    
+.book-own {
+    position: absolute;
+    width: 75px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 2px;
+    border: 1px solid #BB945F;
+    color: #BB945F;
+    text-align: center;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    bottom: 15px;
+}
 
 .book-pic {
     position: absolute;
@@ -356,5 +452,177 @@ hr{
     font-weight: 400;
     line-height: 40px; /* 200% */
     letter-spacing: 2px;
+}
 
+/*MENU*/
+
+.coffeshop-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 20px 40px 20px;
+    align-items: center;
+
+    background: #FFF;
+}
+
+.coffeshop-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 438px;
+    height: 520px;
+
+}
+
+
+
+
+caption {
+    color: #BB945F;
+    font-family: Forum;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; 
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.menu-line {
+    width: 100px;
+    height: 1px;
+    background: #BB945F;
+}
+
+.menu-item {
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 200% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    width: 257px;
+}
+
+.menu-price {
+    color: #000;
+    font-family: Forum;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 200% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    width: 91px;
+    text-align: end;
+}
+
+
+/*Our Contacts*/
+
+.contact-block {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 201px;
+    margin-bottom: 60px;
+}
+
+
+/* .contact-info {
+    width: 503px;
+    height: 380px;
+} */
+
+.contact-text-head {
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px; /* 200% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    margin-top: 0;
+}
+a {
+    text-decoration: none;
+}
+
+.contact-text-body {
+    color: #000;
+
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 200% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    /* text-decoration: none; */
+    padding-left: 0;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.contact-list {
+    list-style: none;
+
+}
+.contact-list-link {
+    text-decoration: none;
+    color: #000;
+}
+
+
+
+.contact-person {
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px; /* 200% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.contact-person-mail {
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 200% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+
+.contacts-link-name{
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+
+/*Digital Library Cards*/
+.find-card-head {
+    color: #000;
+    font-family: Inter;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.6px;
 }
