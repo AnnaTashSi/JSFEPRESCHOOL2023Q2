@@ -264,7 +264,7 @@ hr{
 
 .favorites-radio-button {
     margin: 5px;
-
+    accent-color: black;
 }
 
 .favorites-label:hover {
@@ -549,9 +549,9 @@ caption {
     text-transform: capitalize;
     margin-top: 0;
 }
-a {
+/* a {
     text-decoration: none;
-}
+} */
 
 .contact-text-body {
     color: #000;
@@ -622,7 +622,7 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-   
+    margin-bottom: 51px;
 }
 
 .find-card {
@@ -650,6 +650,7 @@ a {
     border: 3px solid #BB945F;
     background: #FFF;
     text-align: center;
+
 }
 
 .gold-block {
@@ -791,4 +792,133 @@ a {
     border: 1px solid #BB945F;
     background: #BB945F;
     cursor: pointer;
+}
+
+
+/*FOOTER*/
+footer {
+    width: 1440px;
+    height: 250px;
+    background-color: #0C0C0E;
+}
+
+.foot-frame-6 {
+    display: flex;
+    width: 1400px;
+    /* height: 90px; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    flex-shrink: 0;
+    margin-left: 21px;
+}
+
+
+.foot-frame-5 {
+    display: flex;
+    width: 1400px;
+    height: 40px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1022px;
+    flex-shrink: 0;
+    margin-top: 20px;
+}
+
+.adress {
+    width: 229px;
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 133.333% */
+}
+
+.office-hours {
+    color: #FFF;
+    text-align: right;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 133.333% */
+}
+
+.foot-frame-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1147px;
+    margin-left: 0;
+}
+
+.social-networks {
+
+}
+
+.social-networks-links {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 102px;
+    height: 24px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 0;
+}
+
+.social-networks-link {
+
+}
+
+.hr-footer {
+    width: 1400px;
+    height: 1px;
+    background: #FFF;
+}
+
+
+.footer-rss {
+    width: 1400px;
+    height: 22px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+    letter-spacing: 2px;
+}
+
+.rss-link {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.student-link {
+    color: #FFF;
+    text-decoration: none;
+}
+.rss-link:hover {
+    color: #BB945F;
+    font-style:unset;
+ 
+}
+
+.student-link:hover {
+    color: #BB945F;
+    font-style:unset;
+
 }
