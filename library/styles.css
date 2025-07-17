@@ -1,12 +1,21 @@
-body{
-    width: 768px;
-    /* margin: 0; */
+/*Общие стили, сброс стилей браузера по умолчанию:*/
+/* стилевой класс, который управляет шириной контейнера сетки*/
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+ }
+/* .body {
+    padding-left: 0;
+} */
+.main-content {
+    /* padding: 0 20px; */
 }
 
 .header {
     width: 100%;
     height: 90px;
-    flex-shrink: 0;
+    flex-shrink: 0; /*указывает, в каких пропорциях элемент будет уменьшаться*/
     background: #0C0C0E;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
@@ -16,6 +25,16 @@ body{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+@media (max-width: 768px) {
+    .header {
+        width: 100%;
+    }
+}
+.header__container{
+    display: contents;
+    justify-content: space-between;
 }
 
 h1{
@@ -32,6 +51,7 @@ h1{
     padding-left: 20px;
 }
 
+/*NAVIGATION*/
 .nav-link{
     color: #FFF;
     font-family: Inter;
@@ -65,40 +85,125 @@ h1{
     margin-bottom: 31px;
 }
 
-/* 
-.image_container {
-    width: 100%;
-    height: 100%;
+/*BURGER*/
+.burger {
+    display: none;
+    width: 45px;
+    height: 6px;
+    /* top: ; */
 }
 
-.image_container img {
-  
-    border: 1px solid #000; 
- 
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  
+.burger__line, .burger:after, .burger:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 45px;
+    border: 2px solid #ffffff;
 }
-*/
 
+.burger:before {
+    top: 40px;
+  }
 
+.burger:after {
+    top: 60px;
+  }
+
+@media (max-width: 768px) {
+    .burger {
+        display: block;
+    }
+    .nav-list {
+        flex-direction: column;
+        width: 118px;
+        height: 370px;
+        gap: 0;
+        padding: 100px 100px 0;
+    }
+    .nav {
+        position: fixed;
+        width: 332px;
+        height: 570px;
+        top: 0;
+        right: 0;
+        background: #000;
+        z-index: 10;
+        margin-top: 8px;
+        margin-right: 8px;
+        transform: translateX(103%); /* меню скрыто вправо*/
+        transition: 0.3s linear;
+    }
+/*выезжает меню - active*/
+    .nav-opened {
+        transform: translateX(0%);
+        transition: 0.3s linear;
+    }
+
+    .nav-item {
+        width: 100%;
+        margin-bottom: 30px;
+        text-align: center;
+
+    }
+
+    .nav-item:last-child {
+        margin-bottom: 0;
+    }
+    .nav-link {
+        color: #FFF;
+        font-family: Inter;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 50px; /* 250% */
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .nav-close {
+        width: 32px;
+        height: 32px;
+        top: 31px;
+        left: 280px;
+        position: absolute;
+        z-index: 11;
+    }
+
+    .nav-close-line {
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: #FFFFFF;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .nav-close-line:first-child {
+        transform: translateY(50%) rotate(45deg);
+    }
+
+    .nav-close-line:last-child {
+        transform: translateY(-50%) rotate(-45deg);
+    }
+
+}
+
+/*WELCOME*/
 .welcome_container {
     /* width: 100%; */
     height: 598px;
     position: relative;
     background-size: cover;
-    border: 1px solid #000;
+    border-top: 1px solid #000;
     background: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.10) 50%), center / cover no-repeat url(Assets/img/Welcome.jpg);
 }
 
-
-
+@media (max-width: 768px) {
+    .welcome_container {
+        width: 100%;
+    }
+}
 .welcome_text {
     flex-shrink: 0;
     color: #fff;
@@ -110,7 +215,6 @@ h1{
     line-height: 50px; /* 125% */
     letter-spacing: 3px;
     text-transform: uppercase;
-
 }
 
 .welcome_bg {
@@ -126,10 +230,8 @@ h1{
     background: #0C0C0E;
 }
 
+/* ABOUT */
 
-.main-content {
-    padding: 0 20px;
-}
 
 
 h2{
@@ -147,26 +249,6 @@ h2{
     padding-top: 0.05px;
     position: relative;
 }
-
-/* .section-header {
-    margin-bottom: 40px;
-}
-
-.section-favorites {
-    margin-bottom: 40px;
-}
-
-.section-coffeShop {
-    margin-bottom: 40px;
-}
-
-.section-contacts {
-    margin-bottom: 40px;
-}
-
-.section-libraryCard {
-    margin-bottom: 40px;
-} */
 
 
 hr{
@@ -188,15 +270,84 @@ hr{
 }
 
 .images-items {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between; 
+    display: flex; 
+    position:relative; /*меняется анимация*/
+    /* flex-direction: row;
+    justify-content: space-beteen;  */
+    align-items:center;
+    width: 1400px;
+    gap: 25px;
+    left: -475px;
 }
 
-.ab-image {
-    width: 450px;
-    height: 560px;
+
+/* Анимация карусели */
+
+@keyframes move-right {
+    from {left: -475px;}
+    to {left: -950px;}
 }
+
+    
+.transition-right {
+    animation: move-right 5s;
+}
+
+@keyframes move-left {
+    from {left: -475px;}
+    to {left: 0px;}
+}
+
+.transition-left {
+    animation: move-left 5s;
+}
+
+
+
+@media (max-width: 780px) {
+    .images-items {
+        justify-content: space-around;
+        width: 728px;
+    }
+}
+
+
+.ab-carret-left {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    top: 290px;
+    background-color: #FFF;
+    z-index: 10;
+}
+
+.ab-carret-right {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    top: -424px;
+    right: -1376px;
+    background-color: #FFF;
+    z-index: 10;
+}
+
+.ab-image {   
+    /* width: 100%;  /*изменилась анимация*/
+    /* height: 100%;  изменилась анимация */
+    /* display: none;  изменилась анимация */ */
+}
+
+.ab-image.iteme-active {  /*изменилась анимация*/
+
+    /* display: block; изменилась анимация */
+}
+
+.images-carousel-wrapper {
+    overflow: hidden;
+    
+}
+
+
 
 .carousel-container {
     display: flex;
@@ -206,12 +357,32 @@ hr{
     margin-bottom: 60px;
 }
 
-.carousel {
+.carousel_3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 78px;
     padding: 5px;
+}
+
+.carousel_5 {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 120px;
+    padding: 5px;
+}
+
+@media (max-width: 768px) {
+    .carousel_3 {
+        display: none;
+    }
+    .carousel_5 {
+        display: flex;
+    }
+    .image_2, .image_3 {
+        display: none;
+    }
 }
 
 .carousel-button {
@@ -223,18 +394,18 @@ hr{
 
 .carousel-button.active:hover {
     background: #BB945F;
-    cursor:pointer;
 }
 
 .carousel-button.active {
     background: #BB945F;
 }
 
-
-.carousel-button.inactive {
+.carousel-button {
     background: #0C0C0E;
+    cursor:pointer;
 }
 
+/* FAVORITES */
 .pick {
     color: #000;
     font-family: Inter;
@@ -269,10 +440,16 @@ hr{
 
 .favorites-label:hover {
     font-weight: bold;
-
 }
 
+/* название после крыжика Winter  выделено жирным */
+.label_active { 
+    font-weight: bold;
+}
 
+.label_inactive {
+    font-weight: normal;
+}
 /*books*/
 
 
@@ -366,17 +543,17 @@ hr{
     padding-top: 40px;
 }
 
-.summer {
+.invisible {
     display: none;
 }
 
-.autumn {
-    display: none;
+@media (max-width: 768px) {
+    .winter, .summer, .spring, .autumn {
+        /* display: ; */
+        justify-content: space-around;
+    }
 }
 
-.spring {
-    display: none;
-}
 .about-book {
     position: relative;
     width: 550px;
@@ -441,6 +618,9 @@ hr{
     height: 300px;
 }
 
+
+/*COFFEE SHOP*/
+
 .coffeShop-text{
     width: 100%;
     height: 120px;
@@ -454,6 +634,15 @@ hr{
     letter-spacing: 2px;
 }
 
+@media (max-width: 768px) {
+    .coffeShop-text {
+        width: 728 px;
+        height: 200 px;
+    }
+    
+}
+
+
 /*MENU*/
 
 .coffeshop-menu {
@@ -462,21 +651,36 @@ hr{
     justify-content: space-between;
     padding: 20px 20px 40px 20px;
     align-items: center;
-
     background: #FFF;
 }
 
-.coffeshop-block {
+.coffeshop__drinks, .coffeshop__deserts {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
     width: 438px;
     height: 520px;
+}
+
+.coffeshop__deserts {
+    text-align: right;
 
 }
 
+@media (max-width: 768px) {
+    .coffeshop__deserts {
+        padding-left: 246px;
+        padding-top: 40px;
+    }
+}
 
+
+@media (max-width: 768px) {
+    .coffeshop-menu {
+        display: block;
+        padding-top: 100px
+    }
+}
 
 
 caption {
@@ -506,6 +710,7 @@ caption {
     letter-spacing: 2px;
     text-transform: capitalize;
     width: 257px;
+    padding-right: 40px;
 }
 
 .menu-price {
@@ -532,6 +737,14 @@ caption {
     margin-bottom: 60px;
 }
 
+@media (max-width: 768px) {
+    .contact-block {
+        display: inline-block;
+    }
+    .contact-map {
+        padding-top: 100px;
+    }
+}
 
 /* .contact-info {
     width: 503px;
@@ -625,11 +838,24 @@ caption {
     margin-bottom: 51px;
 }
 
+@media (max-width: 768px) {
+    .library-card-block {
+        display: block;
+        padding-left: 50px;
+    }
+}
+
 .find-card {
     width: 600px;
     height: 453px;
-
+    filter:drop-shadow(0px 4px 4px rgba(0,0,0,0.25));
 }
+
+@media (max-width: 768px) {
+    .find-card {
+        margin-bottom: 40px;
+    }
+ }
 
 .find-card-head {
     color: #000;
@@ -728,12 +954,20 @@ caption {
     display: flex;
     flex-direction:column;
     justify-content: space-between;
+    text-align: center;
     width: 456px;
     height: 253px;
     flex-shrink: 0;
     background-color:#FFF;
 }
 
+@media (max-width: 768px) {
+    .get-card {
+        width: 600px;
+        height: 223px;
+    }
+
+}
 
 .get-card-header {
     color: #000;
@@ -746,6 +980,11 @@ caption {
     letter-spacing: 0.6px;
 }
 
+@media (max-width: 768px) {
+    .get-card-header {
+        text-align: center;
+    }
+}
 
 .get-card-text {
     width: 456px;
@@ -760,12 +999,36 @@ caption {
     text-align: right;
 }
 
+@media (max-width: 768px) {
+    .get-card-text {
+        color:#000000;
+        text-align:center;
+        vertical-align:text-middle;
+        font-size:20px;
+        font-family:Inter;
+        left:84px;
+        top:667px;
+        width:600px;
+        height:80px;
+        letter-spacing:2px;
+        line-height:40px;
+        border-style:hidden;
+        outline:none;   
+    }
+}
+
 .two-button-get-card {
     display: inline-flex;
     flex-direction: row;
     justify-content: right;
     align-items: center;
     gap: 20px;
+}
+
+@media  (max-width: 768px) {
+    .two-button-get-card {
+        justify-content: center;
+    }
 }
 
 .button-get-card {
@@ -801,33 +1064,49 @@ caption {
 
 /*FOOTER*/
 footer {
-    width: 1440px;
     height: 250px;
     background-color: #0C0C0E;
 }
 
+@media (max-width: 768px) {
+    footer {
+        width: 100%;
+    }
+}
+
 .foot-frame-6 {
     display: flex;
-    width: 1400px;
+    width: calc(100% - 40px);
     /* height: 90px; */
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 10px;
     flex-shrink: 0;
-    margin-left: 21px;
+    padding: 0 20px;
 }
 
+@media (max-width: 768px) {
+    .foot-frame-6 {
+
+    }
+}
 
 .foot-frame-5 {
     display: flex;
-    width: 1400px;
+    width: 100%;
     height: 40px;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-start;
-    gap: 1022px;
     flex-shrink: 0;
     margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .foot-frame-5 {
+        width: 728px;
+        gap: 347px;
+    }
 }
 
 .adress {
@@ -853,12 +1132,17 @@ footer {
 
 .foot-frame-4 {
     display: flex;
-    justify-content: center;
+    width: 100%;
+    justify-content: space-between;
     align-items: center;
-    gap: 1147px;
     margin-left: 0;
 }
 
+@media (max-width: 768px) {
+    .foot-frame-4 {
+        gap: 476px;
+    }
+}
 .social-networks {
 
 }
@@ -888,9 +1172,14 @@ footer {
     background: #FFF;
 }
 
+@media  (max-width: 768px) {
+    .hr-footer {
+        width: 728px;
+    }
+}
 
 .footer-rss {
-    width: 1400px;
+    width: 100%;
     height: 22px;
     flex-shrink: 0;
     display: flex;
@@ -906,6 +1195,11 @@ footer {
     letter-spacing: 2px;
 }
 
+@media (max-width: 768px) {
+    .footer-rss {
+        width: 728px;
+    }
+}
 .rss-link {
     color: #FFF;
     text-decoration: none;
@@ -926,3 +1220,10 @@ footer {
     font-style:unset;
 
 }
+
+
+
+/* for learning JS - DELETE*/
+/* .iconProfile {
+    cursor: pointer;
+} */
