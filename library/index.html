@@ -11,57 +11,104 @@
     <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
     <script src="./index.js"></script>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!--Этот код говорит браузеру использовать ширину устройства и установить начальный масштаб в 1.-->
     <title>Brooklyn Public Library</title>
 </head>
-<body>
+<body class="body">
     <header>
-        <div class="header">
-            <h1>Brooklyn Public Library</h1>
-            <div class="nav-icon">
-                <nav class="nav">
-                    <ul class="nav-list">
-                        <li class="nav-item"><a href="#profile" class="nav-link">About</a></li>
-                        <li class="nav-item"><a href="#favorites" class="nav-link">Favorites</a></li>
-                        <li class="nav-item"><a href="#coffee_shop" class="nav-link">Coffee shop</a></li>
-                        <li class="nav-item"><a href="#contacts" class="nav-link">Contacts</a></li>
-                        <li class="nav-item"><a href="#library_card" class="nav-link">Library Card</a></li>
-                    </ul>
-                </nav>
-                <img src="assets/img/icon_profile.png" alt="" title="icon_profile" width="28" height="28">
-            </div>
+        <div class="container header">
+            <div class="header__container">
+                <h1>Brooklyn Public Library</h1>
+                <div class="navigation">
+                    <div class="nav-icon">
+                        <nav class="nav">
+                            <ul class="nav-list">
+                                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                                <li class="nav-item"><a href="#favorites" class="nav-link">Favorites</a></li>
+                                <li class="nav-item"><a href="#coffee_shop" class="nav-link">Coffee shop</a></li>
+                                <li class="nav-item"><a href="#contacts" class="nav-link">Contacts</a></li>
+                                <li class="nav-item"><a href="#library_card" class="nav-link">Library Card</a></li>
+                            </ul>
+                            <div class="nav-close">
+                                <span class="nav-close-line"></span>
+                                <span class="nav-close-line"></span>
+                            </div>
+                        </nav>
+                        <div class="icon_profile">
+                            <img src="assets/img/icon_profile.png"  alt="" title="icon_profile" width="28" height="28">
+                        </div>
+                        <!-- BURGER -->                  
+                        <div class="burger">
+                            <span class="burger__line"> </span>
+                        </div>
+                        
+
+                        
+                    </div>
+                </div> 
+            </div>    
         </div>
     </header>
     <main>
+        <!-- WELCOME -->
         <section id="Welcome">
-            <div class="welcome_container">
+            <div class="container welcome_container">
                 <div class="welcome_bg">
                     <p class="welcome_text">Welcome <br> to the Brooklyn <br> Library</p> 
                 </div>
             </div>
         </section>
 
-        <section id="about" class="main-content">
+        <!-- ABOUT -->
+        <section id="about" class="container main-content">
             <div class="section-header">
                 <h2>About</h2>
                 <hr>
             </div>
             <p class="ab-text">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside</p>
-            <div class="images-items">
-                <img class="ab-image" src="Assets/img/image_1.png" alt="image_1">
-                <img class="ab-image" src="Assets/img/image_2.png" alt="image_2">
-                <img class="ab-image" src="Assets/img/image_3.png" alt="image_3">
-            </div>
+                   
 
-            <div class="carousel-container">
-                <div class="carousel">
-                    <div class="carousel-button active"></div>
-                    <div class="carousel-button inactive"></div>
-                    <div class="carousel-button inactive"></div>
+
+            <div class="images-carousel-wrapper">   
+
+                <div class="images-carousel-moving-wrapper ">             
+       
+                <img class="ab-carret-left" src="Assets/img/Carret_Left.svg" alt="carret-left">
+            
+                    <div class="images-items ">
+                        <div class="ab-image image_1" id="iteme-left"> <img src="Assets/img/image_1.png" alt="image_1"> </div>
+                        <div class="ab-image image_2 iteme-active" id="iteme-active"> <img src="Assets/img/image_2.png" alt="image_2"> </div>
+                        <div class="ab-image image_3 iteme-active" id="iteme-active"> <img src="Assets/img/image_3.png" alt="image_3"> </div>
+                        <div class="ab-image image_4 iteme-active" id="iteme-active"> <img src="Assets/img/image_4.png" alt="image_4"> </div>
+                        <div class="ab-image image_5" id="iteme-right"> <img src="Assets/img/image_5.png" alt="image_5"> </div>
+                    </div>
+                    
+                    <div class="carousel-container">
+                        <div class="carousel_3">
+                            <div class="carousel-button"></div>
+                            <div class="carousel-button active"></div>
+                            <div class="carousel-button"></div>
+                        </div>
+                        <div class="carousel_5">
+                            <div class="carousel-button active"></div>
+                            <div class="carousel-button inactive"></div>
+                            <div class="carousel-button inactive"></div>
+                            <div class="carousel-button inactive"></div>
+                            <div class="carousel-button inactive"></div>
+                        </div>
+                    </div>
+                    
                 </div>
-            </div>
+            </div> 
+
+             
+            <img class="ab-carret-right" src="Assets/img/Carret_Right.svg" alt="carret-right">
+            
+
         </section>
 
-        <section id="favorites" class="main-content">
+        <!-- FAVORITES -->
+        <section id="favorites" class="container main-content">
             <div class="section-favorites">
                 <h2>Favorites</h2>
                 <hr>
@@ -70,31 +117,31 @@
                 <p>Pick favorites of season</p>
             </div>
             <div class="radio-button">
-                
-                    <label class="favorites-label">
-                        <input type="radio" name="seasons" value="winter" class="favorites-radio-button">
+                    <!-- Label - название Winter после крыжика -->
+                    <!-- label_active - название после крыжика Winter выделено жирным -->
+                    <label class="favorites-label label_active"> 
+                        <!-- checked - открыжен - закрашен кружок при загрузке страницы -->
+                        <input type="radio" name="seasons" value="winter" checked class="favorites-radio-button button_active">
                         Winter
                     </label>
-                    <label class="favorites-label">
-                        <input type="radio" name="seasons" value="spring" class="favorites-radio-button">
+                    <label class="favorites-label label_inactive">
+                        <input type="radio" name="seasons" value="spring" class="favorites-radio-button button_inactive">
                         Spring
                     </label>
-                    <label class="favorites-label">
-                        <input type="radio" name="seasons" value="summer" class="favorites-radio-button">
+                    <label class="favorites-label label_inactive">
+                        <input type="radio" name="seasons" value="summer" class="favorites-radio-button button_inactive">
                         Summer
                     </label>
-                    <label class="favorites-label">
-                        <input type="radio" name="seasons" value="autumn" class="favorites-radio-button">
+                    <label class="favorites-label label_inactive">
+                        <input type="radio" name="seasons" value="autumn" class="favorites-radio-button button_inactive">
                         Autumn
                     </label>
                 
             </div>
             <div class="favorites-items">
-                
                 <div class="books-block">
-
 <!-- WINTER -->
-                     <div class="winter">
+                     <div class="winter season">
                         <div class="about-book">
                             <div class="staff-picks">Staff Picks</div>
                             <hr class="favorites-hr">
@@ -133,7 +180,7 @@
                         </div>
                     </div>    
 <!-- SPRING     -->
-                    <div class="spring">                       
+                    <div class="spring season invisible">                       
                         <div class="about-book">
                             <div class="staff-picks">Staff Picks</div>
                             <hr class="favorites-hr">
@@ -172,7 +219,7 @@
                         </div>
                     </div>
 <!-- SUMMER -->
-                    <div class="summer">
+                    <div class="summer season invisible">
                         <div class="about-book">
                             <div class="staff-picks">Staff Picks</div>
                             <hr class="favorites-hr">
@@ -214,7 +261,7 @@
                         </div>
                     </div>
 <!-- Autumn -->
-                    <div class="autumn">
+                    <div class="autumn season invisible">
                         <div class="about-book">
                             <div class="staff-picks">Staff Picks</div>
                             <hr class="favorites-hr">
@@ -256,13 +303,11 @@
                             <img class="book-pic"  src="Assets/img/pic-MeganMilks.jpg" alt="Slug: And Other Stories By Megan Milks">
                         </div>
                     </div>
-
                 </div>    
-                
             </div>
         </section>
-        
-        <section id="coffee_shop" class="main-content">
+        <!-- MENU COFFEE SHOP -->
+        <section id="coffee_shop" class="container main-content">
             <div class="section-coffeShop"> 
                 <h2>Coffee shop</h2> 
                 <hr>
@@ -272,7 +317,7 @@
                 you can get a favorite book and read in coffee shop. Our barista to cook you best coffee, and also you can try desserts from bakery.</p>
             
             <div class="coffeshop-menu">
-                <div class="coffeshop-block">
+                <div class="coffeshop-block coffeshop__drinks">
                     <table>
                         <caption>Coffee & Tea</caption>
                         <tbody>
@@ -308,11 +353,9 @@
                             </tr> 
                         </tbody>                       
                     </table>
-
-                  
                 </div>
 
-                <div class="coffeshop-block">
+                <div class="coffeshop-block coffeshop__deserts">
                     <table>
                         <caption>Desserts & Cakes  </caption>
                         <tbody>
@@ -351,8 +394,8 @@
                 </div>
             </div>    
             </section>
-
-        <section id="contacts" class="main-content">
+        <!-- CONTACTS -->
+        <section id="contacts" class="container main-content">
             <div class="section-contacts">
                 <h2>Our contacts</h2>
                 <hr>
@@ -386,8 +429,8 @@
             
             
         </section>
-
-        <section id="library_card" class="main-content">
+        <!-- LIBRARY CARD -->
+        <section id="library_card" class="container main-content">
             <div class="section-libraryCard">
                 <h2>Digital Library Cards</h2> 
                 <hr>
@@ -428,41 +471,43 @@
         </section>
 
     </main>
-    
+    <!-- FOOTER -->
     <footer>
-        <div class="foot-frame-6">
-            <div class="foot-frame-5">
-                <div class="adress">
-                    286 Cadman Plaza, New York, NY 11238, United States
+        <div class="container">
+            <div class="foot-frame-6">
+                <div class="foot-frame-5">
+                    <div class="adress">
+                        286 Cadman Plaza, New York, NY 11238, United States
+                    </div>
+                    <div class="office-hours">Mon - Fri <br> 08:00 am - 07:00 pm</div>   
                 </div>
-                <div class="office-hours">Mon - Fri <br> 08:00 am - 07:00 pm</div>   
-            </div>
-            <div class="foot-frame-4">
-                <div class="social-networks">
-                    <ul class="social-networks-links">
-                    <li class="social-networks-link"><a href="http://twitter.com/Brooklyn_Public_Library" target="_blank" title="Twitter"></a>
-                        <img src="Assets/img/u_twitter-alt.png" alt="Twitter" >
-                    </li>
-                    <li class="social-networks-link"><a href="http://instagram.com/Brooklyn_Public_Library" target="_blank" title="Instagram"></a>
-                        <img src="Assets/img/u_instagram.png" alt="Instagram" >
-                    </li>
-                    <li class="social-networks-link"><a href="http://facebook.com/Brooklyn_Public_Library" target="_blank" title="Facebook"></a>
-                        <img src="Assets/img/u_facebook-f.png" alt="Facebook" >
-                    </li>
-                    </ul>
+                <div class="foot-frame-4">
+                    <div class="social-networks">
+                        <ul class="social-networks-links">
+                        <li class="social-networks-link"><a href="http://twitter.com/Brooklyn_Public_Library" target="_blank" title="Twitter"></a>
+                            <img src="Assets/img/u_twitter-alt.png" alt="Twitter" >
+                        </li>
+                        <li class="social-networks-link"><a href="http://instagram.com/Brooklyn_Public_Library" target="_blank" title="Instagram"></a>
+                            <img src="Assets/img/u_instagram.png" alt="Instagram" >
+                        </li>
+                        <li class="social-networks-link"><a href="http://facebook.com/Brooklyn_Public_Library" target="_blank" title="Facebook"></a>
+                            <img src="Assets/img/u_facebook-f.png" alt="Facebook" >
+                        </li>
+                        </ul>
+                    </div>
+                    <div class="office-hours">Sat - Sun <br> 10:00 am - 06:00 pm</div>
                 </div>
-                <div class="office-hours">Sat - Sun <br> 10:00 am - 06:00 pm</div>
+                
+                <div>
+                    <hr class="hr-footer">
+                </div>
+                <div class="footer-rss">
+                    <div class="year">2023</div>
+                    <div ><a class="rss-link" href="https://rs.school/js-stage0/">The Rolling Scopes School</a></div>
+                    <div > <a class="student-link" href="https://github.com/AnnaTashSi">AnnaTashSi</a></div>
+                </div>
             </div>
-            
-            <div>
-                <hr class="hr-footer">
-            </div>
-            <div class="footer-rss">
-                <div class="year">2013</div>
-                <div ><a class="rss-link" href="https://rs.school/js-stage0/">The Rolling Scopes School</a></div>
-                <div > <a class="student-link" href="https://github.com/AnnaTashSi">AnnaTashSi</a></div>
-            </div>
-        </div>
+        </div>    
     </footer>
 </body>
 </html>
