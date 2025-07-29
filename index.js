@@ -8,6 +8,7 @@ window.onload = function() {
     selectedBurger();
 // About carousel
     addCarret();
+    console.log('deploy test')
 }
 
 
