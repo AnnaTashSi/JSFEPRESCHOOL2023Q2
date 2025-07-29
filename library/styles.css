@@ -269,49 +269,6 @@ hr{
     line-height: 40px; /* 200% */
 }
 
-.images-items {
-    display: flex; 
-    position:relative; /*меняется анимация*/
-    /* flex-direction: row;
-    justify-content: space-beteen;  */
-    align-items:center;
-    width: 1400px;
-    gap: 25px;
-    left: -475px;
-}
-
-
-/* Анимация карусели */
-
-@keyframes move-right {
-    from {left: -475px;}
-    to {left: -950px;}
-}
-
-    
-.transition-right {
-    animation: move-right 5s;
-}
-
-@keyframes move-left {
-    from {left: -475px;}
-    to {left: 0px;}
-}
-
-.transition-left {
-    animation: move-left 5s;
-}
-
-
-
-@media (max-width: 780px) {
-    .images-items {
-        justify-content: space-around;
-        width: 728px;
-    }
-}
-
-
 .ab-carret-left {
     position: relative;
     width: 24px;
@@ -319,6 +276,7 @@ hr{
     top: 290px;
     background-color: #FFF;
     z-index: 10;
+    cursor: pointer;
 }
 
 .ab-carret-right {
@@ -329,24 +287,79 @@ hr{
     right: -1376px;
     background-color: #FFF;
     z-index: 10;
+    cursor: pointer;
 }
 
-.ab-image {   
-    /* width: 100%;  /*изменилась анимация*/
-    /* height: 100%;  изменилась анимация */
-    /* display: none;  изменилась анимация */ */
-}
 
-.ab-image.iteme-active {  /*изменилась анимация*/
 
-    /* display: block; изменилась анимация */
-}
 
 .images-carousel-wrapper {
+    display: flex;
+    align-items: center;
     overflow: hidden;
     
 }
 
+.images-items { /*контейнер для ab-images, */
+    display: flex; 
+    position:relative; /*меняется анимация /*2307*/
+    /* flex-direction: row;*/
+    justify-content: center;
+    align-items:center;
+    width: 1400px; /*2407*/
+    height: 560px; /*2407 задан финсированный размер, чтобы нужные слайды отображались внутри этой сетки*/
+    gap: 25px;
+    /* left: -475px; */
+    transform: translateX(0px);
+    
+    
+}
+.ab-image {   
+    /* width: 100%;  изменилась анимация 2407 */
+    /* height: 100%;  изменилась анимация 2407 */
+    display: none;  /*работают кнопки, не работает стрелка*/
+    position: relative;  
+    justify-content: center;
+    align-items: center;
+    /* transform: translateX(0px); */
+
+}
+
+.ab-image.iteme-active {  /*изменилась анимация*/
+    display: block;  /*работают кнопки, не работает стрелка*/
+
+}
+
+.hidden {
+  display: none;
+}
+
+/* Анимация карусели */
+
+@keyframes move-right {
+    from {left: -475px;}
+    to {left: -950px;}
+}
+
+.transition-right {
+    animation: move-right 3s ease-in-out;
+}
+
+@keyframes move-left {
+    from {left: -475px;}
+    to {left: 0px;}
+}
+
+.transition-left {
+    animation: move-left 3s ease-in-out;
+}
+
+@media (max-width: 780px) {
+    .images-items {
+        justify-content: space-around;
+        width: 728px;
+    }
+}
 
 
 .carousel-container {
@@ -355,6 +368,7 @@ hr{
     align-items: center;
     margin-top: 40px;
     margin-bottom: 60px;
+    /* position: absolute; */
 }
 
 .carousel_3 {
